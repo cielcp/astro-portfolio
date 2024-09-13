@@ -14,11 +14,18 @@ const { pageTitle } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/main.css" />
   </head>
 
   <body
-    class="flex animate-gradient justify-center bg-gradient-to-r from-orange-100 via-pink-100 to-green-200 bg-300% text-emerald-900">
-    <div class="max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
+    class="font-readex flex justify-center font-bold leading-loose tracking-wide">
+    <div class="w-screen items-center">
       <Navigation />
       <slot />
     </div>

@@ -5,13 +5,13 @@ const { title, url, image, color } = Astro.props
 <a href={url}>
   <div
     class:list={[
-      'group h-96 overflow-hidden rounded-xl p-8 pt-20 font-semibold text-zinc-700 drop-shadow-lg md:p-20',
+      'group h-96 overflow-hidden rounded-xl border-2 border-black p-8 pt-20 font-semibold text-zinc-700 drop-shadow-lg md:p-20',
       color,
     ]}>
-    <h1 class="pb-16 text-4xl">{title}</h1>
     <img
       class="transform rounded-xl border transition group-hover:-translate-y-3"
       src={image.url}
     />
   </div>
+  <h2 class="pt-6">{title}</h2>
 </a>

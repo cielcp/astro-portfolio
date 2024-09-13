@@ -1,17 +1,22 @@
 ---
+import Container from '../components/Container.astro'
 import Card from './Card.astro'
 const allWorks = await Astro.glob('../pages/works/*.md')
 ---
 
-<div class="grid grid-cols-2 grid-rows-2 gap-10">
-  {
-    allWorks.map((work) => (
-      <Card
-        url={work.url}
-        title={work.frontmatter.title}
-        image={work.frontmatter.image}
-        color={work.frontmatter.color}
-      />
-    ))
-  }
+<div class="border-2 border-black bg-gray-200 py-12">
+  <Container>
+    <div class="grid grid-cols-2 grid-rows-2 gap-10">
+      {
+        allWorks.map((work) => (
+          <Card
+            url={work.url}
+            title={work.frontmatter.title}
+            image={work.frontmatter.image}
+            color={work.frontmatter.color}
+          />
+        ))
+      }
+    </div>
+  </Container>
 </div>

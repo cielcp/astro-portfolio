@@ -7,14 +7,15 @@ const pageTitle = 'Home Page'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="grid h-screen place-items-center content-center text-center">
-        <Hero />
-    </div>
+  <div
+    class="grid min-h-[calc(100vh-48px)] place-items-center content-center text-center">
+    <Hero />
+  </div>
 
-    <div class="">
-        <Works />
-    </div>
-    <div class="grid h-screen place-items-center content-center">
-        <Button>Click me!</Button>
-    </div>
+  <div class="">
+    <Works />
+  </div>
+  <div class="grid h-screen place-items-center content-center">
+    <Button>Click me!</Button>
+  </div>
 </BaseLayout>
