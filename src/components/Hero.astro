@@ -1,77 +1,84 @@
 ---
 import Container from '../components/Container.astro'
 
-const intro1 = 'hi, i’m ciel'
-const intro2 = 'a ux/ui developer'
-const intro3 = 'with a background in computer science'
-const intro4 =
-  'designing digital experiences that simplify, empathize, and spark joy'
+const intro1 = 'ciel is a designer and developer'
+const intro2 = 'with a background in computer science'
+const intro3 =
+  'designing digital experiences that simplify, engage, and spark joy'
 ---
 
+<style>
+  model-viewer {
+    --progress-bar-color: none;
+    --progress-bar-height: 0px;
+  }
+</style>
+
+<!-- Import the component -->
+<script
+  type="module"
+  src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+></script>
+
+<link rel="stylesheet" href="/src/main.css" />
+
 <Container>
-  <!-- Import the component -->
-  <script
-    type="module"
-    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
-  ></script>
-
-  <link rel="stylesheet" href="/src/main.css" />
-
-  <section class="mt-20 flex flex-col gap-10" aria-label="Hero">
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <h1 class="leading-6">{intro1}</h1>
-      <!-- Use it like any other HTML element -->
-      <model-viewer
-        camera-controls
-        alt="A 3D model of a bow"
-        poster="../../images/3d/bow.jpg"
-        src="../../images/3d/cloud.gltf"
-        camera-orbit="180deg 2m"
-        disable-zoom
-        interaction-prompt="none"
-        class="inline"
-        auto-rotate
-        rotation-per-second="30deg">
-      </model-viewer>
-      <h1>{intro2}</h1>
-      <model-viewer
-        camera-controls
-        alt="A 3D model of a cloud"
-        poster="../../images/3d/bow.jpg"
-        src="../../images/3d/bow.gltf"
-        camera-orbit="180deg 2m"
-        disable-zoom
-        interaction-prompt="none"
-        class="inline"
-        auto-rotate
-        rotation-per-second="30deg">
-      </model-viewer>
-      <h1 class="leading-loose">{intro3}</h1>
-      <model-viewer
-        camera-controls
-        alt="A 3D model of a bow"
-        poster="../../images/3d/bow.jpg"
-        src="../../images/3d/bunny.gltf"
-        camera-orbit="180deg 2m"
-        disable-zoom
-        interaction-prompt="none"
-        class="inline"
-        auto-rotate
-        rotation-per-second="30deg">
-      </model-viewer>
-      <h1 class="leading-loose">{intro4}</h1>
+  <section class="mt-20 flex flex-col items-center gap-10" aria-label="Hero">
+    <div class="mb-6 flex flex-wrap items-center">
+      <span class="inline"
+        >{intro1}
+        <!-- Use it like any other HTML element -->
+        <model-viewer
+          camera-controls
+          alt="A 3D model of a bow"
+          poster="../../images/3d/bow.jpg"
+          src="../../images/3d/bow.gltf"
+          camera-orbit="180deg 2m"
+          disable-zoom
+          disable-pan
+          interaction-prompt="none"
+          auto-rotate
+          rotation-per-second="30deg">
+        </model-viewer>
+        {intro2}
+        <model-viewer
+          camera-controls
+          alt="A 3D model of a cloud"
+          poster="../../images/3d/cloud.jpg"
+          src="../../images/3d/cloud.gltf"
+          camera-orbit="180deg 2m"
+          disable-zoom
+          disable-pan
+          interaction-prompt="none"
+          auto-rotate
+          rotation-per-second="30deg">
+        </model-viewer>
+        {intro3}
+        <model-viewer
+          camera-controls
+          alt="A 3D model of a bunny"
+          poster="../../images/3d/bunny.jpg"
+          src="../../images/3d/bunny.gltf"
+          camera-orbit="180deg 2m"
+          disable-zoom
+          disable-pan
+          interaction-prompt="none"
+          auto-rotate
+          rotation-per-second="30deg">
+        </model-viewer>
+      </span>
     </div>
   </section>
   <div
     class="child m-auto mt-28 flex w-fit gap-4 rounded-xl border-2 border-black p-2 px-6">
     <a href="https://www.linkedin.com/in/parkciel/"
-      ><img class="h-8" src="/icons/linkedin.svg" /></a
+      ><img class="h-6" src="/icons/linkedin.svg" /></a
     >
     <a href="https://github.com/cielcp">
-      <img class="h-8" src="/icons/github.svg" />
+      <img class="h-6" src="/icons/github.svg" />
     </a>
     <a href="https://www.behance.net/cielpark1">
-      <img class="h-8" src="/icons/behance.svg" />
+      <img class="h-6" src="/icons/behance.svg" />
     </a>
   </div>
 </Container>

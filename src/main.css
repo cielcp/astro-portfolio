@@ -6,9 +6,13 @@
   h1 {
     @apply text-xl md:text-4xl;
   }
+  span {
+    @apply text-xl md:text-4xl;
+  }
 
   model-viewer {
     height: 60px;
-    width: 50px;
+    width: 60px;
+    @apply mx-2 inline-flex overflow-hidden align-middle;
   }
 }
