@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Navigation from '../components/Navigation.astro'
+import '../base.css'
 const { pageTitle } = Astro.props
 
 // Full Astro Component Syntax:
@@ -20,7 +21,19 @@ const { pageTitle } = Astro.props
       href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../src/main.css" />
+    <link rel="stylesheet" href="../../src/base.css" />
+    <style is:global>
+      model-viewer {
+        --progress-bar-color: none;
+        --progress-bar-height: 0px;
+      }
+    </style>
+
+    <!-- import the modelviewer component -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    ></script>
   </head>
 
   <body
