@@ -5,20 +5,14 @@ import Container from '../components/Container.astro'
 <Container>
   <nav
     class="sticky top-5 z-10 ml-auto mr-auto rounded-xl border-2 border-black bg-white px-6">
-    <div class="flex h-12 items-center justify-between">
-      <a href="../" class="text-xl">cp</a>
+    <div class="flex h-12 items-center justify-between text-lg">
+      <a href="../" class="hoverable">CP</a>
       <div class="flex space-x-4 sm:space-x-20">
-        <a
-          href="../"
-          class="flex transform items-center gap-1 transition hover:-translate-y-1"
-          >work<img class="w-4" src="../../icons/down.svg" /></a
+        <a href="../" class="hoverable flex items-center gap-1"
+          >Work<img class="w-4" src="../../icons/down.svg" /></a
         >
-        <a href="../about" class="transform transition hover:-translate-y-1"
-          >about</a
-        >
-        <a href="../resume" class="transform transition hover:-translate-y-1"
-          >resume</a
-        >
+        <a href="../about" class="hoverable">About</a>
+        <a href="../resume" class="hoverable">Resume</a>
       </div>
     </div>
   </nav>

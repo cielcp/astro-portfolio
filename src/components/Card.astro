@@ -1,17 +1,30 @@
 ---
-const { title, url, image, color } = Astro.props
+const { title, index, url, description, tags, image, color } = Astro.props
+const isEven = index % 2 === 0
 ---
 
-<a href={url}>
+<div class:list={[isEven ? 'flex-row-reverse' : '', 'flex gap-10']}>
+  <a href={url} class="w-1/2">
+    <div
+      class:list={[
+        'group h-96 overflow-hidden rounded-xl border-2 border-black p-8 pt-20 font-semibold text-zinc-700 drop-shadow-lg md:p-20',
+        color,
+      ]}>
+      <img
+        class="transform rounded-xl border transition group-hover:-translate-y-3"
+        src={image.url}
+      />
+    </div>
+  </a>
   <div
     class:list={[
-      'group h-96 overflow-hidden rounded-xl border-2 border-black p-8 pt-20 font-semibold text-zinc-700 drop-shadow-lg md:p-20',
-      color,
+      'flex w-1/2 flex-col justify-center',
+      isEven ? 'text-right' : 'text-left',
     ]}>
-    <img
-      class="transform rounded-xl border transition group-hover:-translate-y-3"
-      src={image.url}
-    />
+    <a href={url} class="hoverable mb-12 flex flex-col gap-4">
+      <h3 class="pt-6">{title}</h3>
+      <p>{description}</p>
+      <p>{tags.join(' | ')}</p>
+    </a>
   </div>
-  <h2 class="pt-6">{title}</h2>
-</a>
+</div>

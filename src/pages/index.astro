@@ -1,21 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
-import CaseStudies from '../components/CaseStudies.astro'
-import Button from '../components/Button.astro'
+import Works from '../components/Works.astro'
+import Footer from '../components/Footer.astro'
 const pageTitle = 'Home Page'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div
-    class="grid min-h-[calc(100vh-48px)] place-items-center content-center text-center">
+  <div class="">
     <Hero />
   </div>
 
   <div class="">
-    <CaseStudies />
+    <Works />
   </div>
-  <div class="grid h-screen place-items-center content-center">
-    <Button>Click me!</Button>
-  </div>
+  <Footer />
 </BaseLayout>

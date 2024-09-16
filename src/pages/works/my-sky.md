@@ -1,7 +1,8 @@
 ---
+index: 3
 layout: ../../layouts/WorkLayout.astro
 title: 'MySky'
-description: 'This was a project I completed during my semester abroad, for my UI design programming course.'
+description: 'A creative development project to reimagine & personalize how we check the weather.'
 site:
   url: 'https://cs4640.cs.virginia.edu/ccp7gcp/campus-thrift/'
   screenshot: 'https://docs.astro.build/assets/full-logo-dark.png'
@@ -10,7 +11,7 @@ image:
   url: '/images/my-sky.jpg'
   alt: 'Screenshot of My Sky website'
 color: 'bg-[#d6e6d3]'
-tags: ['astro', 'coursework', 'dev']
+tags: ['Web Dev', 'Visual Design', 'Coursework']
 ---
 
 # Firstly

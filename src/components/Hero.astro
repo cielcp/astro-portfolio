@@ -1,7 +1,7 @@
 ---
 import Container from '../components/Container.astro'
 
-const intro1 = 'ciel is a designer and developer'
+const intro1 = 'Ciel is a designer and developer'
 const intro2 = 'with a background in computer science'
 const intro3 =
   'designing digital experiences that simplify, engage, and spark joy'
@@ -22,12 +22,11 @@ const intro3 =
 
 <link rel="stylesheet" href="/src/main.css" />
 
-<Container>
-  <section class="mt-20 flex flex-col items-center gap-10" aria-label="Hero">
-    <div class="mb-6 flex flex-wrap items-center">
+<section class="flex h-[calc(100vh-96px)] items-center text-center">
+  <Container>
+    <h1 class="my-32">
       <span class="inline"
         >{intro1}
-        <!-- Use it like any other HTML element -->
         <model-viewer
           camera-controls
           alt="A 3D model of a bow"
@@ -67,18 +66,18 @@ const intro3 =
           rotation-per-second="30deg">
         </model-viewer>
       </span>
+    </h1>
+    <div
+      class="mx-auto flex w-fit gap-4 rounded-xl border-2 border-black p-2 px-6">
+      <a href="https://www.linkedin.com/in/parkciel/"
+        ><img class="hoverable h-6" src="/icons/linkedin.svg" /></a
+      >
+      <a href="https://github.com/cielcp">
+        <img class="hoverable h-6" src="/icons/github.svg" />
+      </a>
+      <a href="https://www.behance.net/cielpark1">
+        <img class="hoverable h-6" src="/icons/behance.svg" />
+      </a>
     </div>
-  </section>
-  <div
-    class="child m-auto mt-28 flex w-fit gap-4 rounded-xl border-2 border-black p-2 px-6">
-    <a href="https://www.linkedin.com/in/parkciel/"
-      ><img class="h-6" src="/icons/linkedin.svg" /></a
-    >
-    <a href="https://github.com/cielcp">
-      <img class="h-6" src="/icons/github.svg" />
-    </a>
-    <a href="https://www.behance.net/cielpark1">
-      <img class="h-6" src="/icons/behance.svg" />
-    </a>
-  </div>
-</Container>
+  </Container>
+</section>

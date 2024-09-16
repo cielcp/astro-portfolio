@@ -6,13 +6,18 @@
   h1 {
     @apply text-xl md:text-4xl;
   }
-  span {
-    @apply text-xl md:text-4xl;
+  h2 {
+    @apply text-xl md:text-3xl;
+  }
+  h3 {
+    @apply md:text-2xl;
   }
 
   model-viewer {
-    height: 60px;
-    width: 60px;
-    @apply mx-2 inline-flex overflow-hidden align-middle;
+    @apply mx-2 inline-flex h-14 w-14 overflow-hidden align-middle;
+  }
+
+  .hoverable {
+    @apply transform transition hover:-translate-y-1;
   }
 }

@@ -2,16 +2,21 @@
 import Container from './Container.astro'
 import Card from './Card.astro'
 const allWorks = await Astro.glob('../pages/works/*.md')
+allWorks.sort((a, b) => a.frontmatter.index - b.frontmatter.index)
 ---
 
-<div class="border-2 border-black bg-gray-200 py-12">
+<div class="border-b-2 border-t-2 border-black bg-gray-200 py-12">
   <Container>
-    <div class="grid grid-cols-2 grid-rows-2 gap-10">
+    <div class="flex flex-col gap-16">
+      <div class="text-center"><h2>Case Studies</h2></div>
       {
         allWorks.map((work) => (
           <Card
             url={work.url}
+            index={work.frontmatter.index}
             title={work.frontmatter.title}
+            description={work.frontmatter.description}
+            tags={work.frontmatter.tags}
             image={work.frontmatter.image}
             color={work.frontmatter.color}
           />

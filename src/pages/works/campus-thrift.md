@@ -1,7 +1,8 @@
 ---
+index: 1
 layout: ../../layouts/WorkLayout.astro
 title: 'Campus Thrift'
-description: 'In this final project for Programming Languages for Web Apps @ the University of Virginia, I designed and developed a web app enabling students to exchange items with each other locally.'
+description: 'A mobile app design to help students, staff, and visitors find parking around grounds.'
 site:
   url: 'https://cs4640.cs.virginia.edu/ccp7gcp/campus-thrift/'
   screenshot: 'https://docs.astro.build/assets/full-logo-dark.png'
@@ -10,7 +11,7 @@ image:
   url: '/images/campus-thrift.jpg'
   alt: 'The full Astro logo.'
 color: 'bg-[#fdd0bf]'
-tags: ['astro', 'coursework', 'dev']
+tags: ['UX Design', 'UI Design', 'Coursework']
 ---
 
 # Firstly
