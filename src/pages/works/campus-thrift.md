@@ -8,9 +8,9 @@ site:
   screenshot: 'https://docs.astro.build/assets/full-logo-dark.png'
   alt: 'A screenshot of the Campus Thrift homepage'
 image:
-  url: '/images/campus-thrift.jpg'
+  url: '\ct\ct raw.png'
   alt: 'The full Astro logo.'
-color: 'bg-[#fdd0bf]'
+color: 'bg-[#F7F5F0]'
 tags: ['UX Design', 'UI Design', 'Coursework']
 ---
 

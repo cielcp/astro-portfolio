@@ -10,7 +10,7 @@ site:
 image:
   url: '\wz\wz raw.png'
   alt: 'The full Astro logo.'
-color: bg-[#c0dbf9]
+color: bg-[#EDF1F2]
 tags: ['UX Design', 'Prototyping', 'Coursework']
 ---
 

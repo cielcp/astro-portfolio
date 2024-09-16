@@ -8,9 +8,9 @@ site:
   screenshot: 'https://docs.astro.build/assets/full-logo-dark.png'
   alt: 'A screenshot of the MySky homepage'
 image:
-  url: '/images/my-sky.jpg'
+  url: '\ms\ms raw.png'
   alt: 'Screenshot of My Sky website'
-color: 'bg-[#d6e6d3]'
+color: 'bg-[#E4ECE5]'
 tags: ['Web Dev', 'Visual Design', 'Coursework']
 ---
 
