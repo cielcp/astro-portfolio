@@ -22,9 +22,11 @@ const intro3 =
 
 <link rel="stylesheet" href="/src/main.css" />
 
-<section class="flex h-[calc(100vh-96px)] items-center text-center">
-  <Container>
-    <h1 class="my-24 sm:my-32">
+<section
+  class="flex h-[calc(100vh-96px)] flex-col items-center text-center align-middle">
+  <div
+    class="m-auto my-6 flex grow px-4 sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
+    <h1 class="flex items-center justify-center text-center">
       <span class="inline leading-relaxed"
         >{intro1}
         <model-viewer
@@ -67,17 +69,17 @@ const intro3 =
         </model-viewer>
       </span>
     </h1>
-    <div
-      class="mx-auto flex w-fit gap-4 rounded-xl border-2 border-black p-2 px-6">
-      <a href="https://www.linkedin.com/in/parkciel/"
-        ><img class="hoverable h-6" src="/icons/linkedin.svg" /></a
-      >
-      <a href="https://github.com/cielcp">
-        <img class="hoverable h-6" src="/icons/github.svg" />
-      </a>
-      <a href="https://www.behance.net/cielpark1">
-        <img class="hoverable h-6" src="/icons/behance.svg" />
-      </a>
-    </div>
-  </Container>
+  </div>
+  <div
+    class="mx-auto my-6 flex w-fit gap-4 rounded-xl border-2 border-black p-2 px-6">
+    <a href="https://www.linkedin.com/in/parkciel/"
+      ><img class="hoverable h-6" src="/icons/linkedin.svg" /></a
+    >
+    <a href="https://github.com/cielcp">
+      <img class="hoverable h-6" src="/icons/github.svg" />
+    </a>
+    <a href="https://www.behance.net/cielpark1">
+      <img class="hoverable h-6" src="/icons/behance.svg" />
+    </a>
+  </div>
 </section>
