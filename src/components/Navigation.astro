@@ -35,13 +35,15 @@ import Container from '../components/Container.astro'
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="absolute right-4 top-20 mt-2 flex hidden w-fit flex-col items-end rounded-xl border-2 border-black sm:hidden">
+    class="absolute right-4 top-20 mt-2 flex hidden w-fit flex-col items-end rounded-xl border-2 border-black bg-white sm:hidden">
     <a href="../" class="hoverable px-4 py-2">Work</a>
     <a href="../about" class="hoverable px-4 py-2">About</a>
     <a href="../resume" class="hoverable px-4 py-2">Resume</a>
   </div>
 </Container>
+
 <script>
+  // script for displaying mobile menu
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menu-button')
     const mobileMenu = document.getElementById('mobile-menu')
@@ -56,17 +58,5 @@ import Container from '../components/Container.astro'
         }
       })
     }
-
-    // Optional: Close mobile menu when clicking outside of it
-    document.addEventListener('click', (event) => {
-      if (navLinks && mobileMenu && menuButton) {
-        if (
-          !navLinks.contains(event.target) &&
-          !menuButton.contains(event.target)
-        ) {
-          mobileMenu.classList.add('hidden')
-        }
-      }
-    })
   })
 </script>
