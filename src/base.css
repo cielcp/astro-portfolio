@@ -4,13 +4,16 @@
 
 @layer base {
   h1 {
-    @apply text-2xl md:text-4xl;
+    @apply text-2xl font-semibold uppercase md:text-4xl;
   }
   h2 {
     @apply text-xl md:text-3xl;
   }
   h3 {
-    @apply md:text-2xl;
+    @apply font-semibold uppercase md:text-lg;
+  }
+  h4 {
+    @apply font-semibold uppercase md:text-sm;
   }
 
   model-viewer {
@@ -19,6 +22,9 @@
 }
 
 @layer components {
+  .subtitle {
+    @apply text-xl;
+  }
   .hoverable {
     @apply transform transition hover:-translate-y-1;
   }
@@ -29,6 +35,6 @@
 
   /* not working rn: ease-custom1 duration-700*/
   .wavy-text {
-    @apply text-center text-[10em] font-medium leading-normal;
+    @apply text-center text-[10em] leading-normal;
   }
 }

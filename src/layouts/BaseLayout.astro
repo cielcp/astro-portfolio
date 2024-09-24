@@ -18,6 +18,10 @@ const { pageTitle } = Astro.props
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap"
       rel="stylesheet"
     />
@@ -37,7 +41,7 @@ const { pageTitle } = Astro.props
   </head>
 
   <body
-    class="flex justify-center font-readex font-semibold leading-loose tracking-wide">
+    class="font-heebo flex justify-center bg-[#F9F8F3] leading-loose tracking-wide">
     <div class="w-screen items-center">
       <Navigation />
       <slot />

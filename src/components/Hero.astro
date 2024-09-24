@@ -3,17 +3,17 @@ import Container from '../components/Container.astro'
 
 const intro1 =
   'is a designer and developer with a background in computer science, creating digital experiences that are intuitive, engaging, and joyful.'
-const intro2 = 'with a background in computer science'
-const intro3 =
-  'designing digital experiences that simplify, engage, and spark joy'
+const focus =
+  'Digital product design, brand design, frontend development, web development'
+const fuel = 'Data, creativity, perfectionism, and Korean comfort food'
 ---
 
-<section
-  class="flex h-[calc(100vh-96px)] flex-col items-center text-center align-middle">
-  <h1 class="wavy-text" style="filter: url(#turbulence-effect) ">Ciel Park</h1>
+<section class="flex h-[calc(100vh-96px)] flex-col px-10 align-middle">
+  <!-- intro div -->
   <div
-    class="m-auto my-6 flex grow px-4 sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
-    <h1 class="flex items-center justify-center text-center">
+    class="my-auto w-1/2 flex-col justify-center px-6 sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
+    <h1 class="my-4 mt-12">Ciel Park</h1>
+    <h2 class="subtitle flex items-center justify-center">
       <span class="inline leading-relaxed"
         >{intro1}
         <model-viewer
@@ -29,18 +29,22 @@ const intro3 =
           rotation-per-second="30deg">
         </model-viewer>
       </span>
-    </h1>
+    </h2>
   </div>
-  <div
-    class="mx-auto my-6 flex w-fit gap-4 rounded-xl border-2 border-black p-2 px-6">
-    <a href="https://www.linkedin.com/in/parkciel/"
-      ><img class="hoverable h-6" src="/icons/linkedin.svg" /></a
-    >
-    <a href="https://github.com/cielcp">
-      <img class="hoverable h-6" src="/icons/github.svg" />
-    </a>
-    <a href="https://www.behance.net/cielpark1">
-      <img class="hoverable h-6" src="/icons/behance.svg" />
-    </a>
+  <div class="my-8 flex">
+    <!-- focused on div -->
+    <div class="flex w-1/2 flex-col gap-4 p-2 px-6">
+      <h3>Focused on</h3>
+      <p>
+        {focus}
+      </p>
+    </div>
+    <!-- fueled by div -->
+    <div class="flex w-1/2 flex-col gap-4 p-2 px-6">
+      <h3>Fueled by</h3>
+      <p>
+        {fuel}
+      </p>
+    </div>
   </div>
 </section>
