@@ -16,8 +16,19 @@
   model-viewer {
     @apply mx-2 inline-flex h-12 w-12 overflow-hidden align-middle sm:h-14 sm:w-14;
   }
+}
 
+@layer components {
   .hoverable {
     @apply transform transition hover:-translate-y-1;
+  }
+
+  .gradient-bg {
+    @apply animate-gradient bg-gradient-to-r from-orange-100 via-pink-100 to-green-200 bg-300%;
+  }
+
+  /* not working rn: ease-custom1 duration-700*/
+  .wavy-text {
+    @apply text-center text-[10em] font-medium leading-normal;
   }
 }

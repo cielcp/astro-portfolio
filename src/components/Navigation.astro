@@ -1,46 +1,44 @@
 ---
-import Container from '../components/Container.astro'
+
 ---
 
-<Container>
-  <nav
-    class="sticky top-5 z-10 mx-auto rounded-xl border-2 border-black bg-white px-6">
-    <div class="flex h-12 items-center justify-between sm:text-lg">
-      <a href="../" class="hoverable">CP</a>
-      <!-- Hamburger Menu Button -->
-      <button id="menu-button" class="block px-2 py-1 sm:hidden">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M4.5 12.0005H19.5M4.5 17.7705H19.5M4.5 6.23047H19.5"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-miterlimit="10"
-            stroke-linecap="round"></path>
-        </svg>
-      </button>
-      <div class="flex hidden space-x-4 sm:flex sm:space-x-20">
-        <a href="../" class="hoverable flex items-center gap-1"
-          >Work<img class="w-4" src="../../icons/down.svg" /></a
-        >
-        <a href="../about" class="hoverable">About</a>
-        <a href="../resume" class="hoverable">Resume</a>
-      </div>
+<nav class="sticky top-5 z-10 mx-auto border-b-2 border-black px-6">
+  <div class="flex h-12 items-center justify-between sm:text-sm">
+    <a href="../" class="hoverable text-lg">✦</a>
+    <!-- Hamburger Menu Button -->
+    <button id="menu-button" class="block px-2 py-1 sm:hidden">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M4.5 12.0005H19.5M4.5 17.7705H19.5M4.5 6.23047H19.5"
+          stroke="black"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"></path>
+      </svg>
+    </button>
+    <div class="flex hidden space-x-4 sm:flex sm:space-x-20">
+      <a href="../" class="hoverable flex items-center gap-1"
+        >WORK<img class="w-4" src="../../icons/down.svg" /></a
+      >
+      <a href="../about" class="hoverable">ABOUT</a>
+      <a href="../resume" class="hoverable">RESUME</a>
     </div>
-  </nav>
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="absolute right-4 top-20 mt-2 flex hidden w-fit flex-col items-end rounded-xl border-2 border-black bg-white sm:hidden">
-    <a href="../" class="hoverable px-4 py-2">Work</a>
-    <a href="../about" class="hoverable px-4 py-2">About</a>
-    <a href="../resume" class="hoverable px-4 py-2">Resume</a>
   </div>
-</Container>
+</nav>
+
+<!-- Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="absolute right-4 top-20 mt-2 flex hidden w-fit flex-col items-end rounded-xl border-2 border-black bg-white sm:hidden">
+  <a href="../" class="hoverable px-4 py-2">Work</a>
+  <a href="../about" class="hoverable px-4 py-2">About</a>
+  <a href="../resume" class="hoverable px-4 py-2">Resume</a>
+</div>
 
 <script>
   // script for displaying mobile menu

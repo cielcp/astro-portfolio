@@ -3,13 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import Works from '../components/Works.astro'
 import Footer from '../components/Footer.astro'
+import Noise from '../components/Noise.astro'
 const pageTitle = 'Home Page'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="">
+  <section>
     <Hero />
-  </div>
+    <Noise />
+    <!--<div id="img-bkg"></div> -->
+  </section>
 
   <div class="">
     <Works />
