@@ -4,10 +4,12 @@ import Hero from '../components/Hero.astro'
 import Works from '../components/Works.astro'
 import Footer from '../components/Footer.astro'
 import Noise from '../components/Noise.astro'
+import Background from '../components/Background.astro'
 const pageTitle = 'Home Page'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Background />
   <section>
     <Hero />
     <Noise />
