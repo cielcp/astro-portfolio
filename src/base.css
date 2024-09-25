@@ -6,14 +6,12 @@
   h1 {
     @apply text-2xl font-semibold uppercase md:text-4xl;
   }
+  /* heebo semibold 24 */
   h2 {
-    @apply text-xl md:text-3xl;
+    @apply text-xl font-semibold;
   }
   h3 {
     @apply font-semibold uppercase md:text-lg;
-  }
-  h4 {
-    @apply font-semibold uppercase md:text-sm;
   }
 
   model-viewer {
@@ -25,8 +23,14 @@
   .subtitle {
     @apply text-xl;
   }
+  .emphasis {
+    @apply font-semibold uppercase md:text-sm;
+  }
   .hoverable {
     @apply transform transition hover:-translate-y-1;
+  }
+  .link {
+    @apply underline decoration-wavy;
   }
 
   .gradient-bg {

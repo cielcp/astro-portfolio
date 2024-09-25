@@ -8,26 +8,20 @@ const isEven = index % 2 === 0
     'flex flex-col gap-8 sm:flex-row',
     isEven ? 'sm:flex-row-reverse' : '',
   ]}>
-  <a href={url} class="sm:w-1/2">
-    <div
-      class:list={[
-        'group flex h-56 items-center justify-center overflow-hidden rounded-xl border-2 border-black sm:h-96',
-        color,
-      ]}>
-      <img class="hoverable max-w-5/6 max-h-5/6 rounded-xl" src={image.url} />
-    </div>
-  </a>
+  <div class="flex h-56 items-center justify-center sm:h-96 sm:w-1/2">
+    <a href={url} class="flex items-center justify-center">
+      <img class="hoverable max-h-5/6 max-w-5/6" src={image.url} />
+    </a>
+  </div>
   <div
     class:list={[
       'flex flex-col justify-center sm:w-1/2',
       isEven ? 'sm:text-right' : '',
     ]}>
-    <a
-      href={url}
-      class="hoverable -mt-4 mb-8 flex flex-col gap-4 sm:mb-12 sm:mt-0">
-      <h3 class="pt-6">{title}</h3>
+    <div class="-mt-4 mb-8 flex flex-col gap-4 sm:mb-12 sm:mt-0">
+      <h2 class="pt-6">{title}</h2>
       <p>{description}</p>
       <p>{tags.join(' | ')}</p>
-    </a>
+    </div>
   </div>
 </div>

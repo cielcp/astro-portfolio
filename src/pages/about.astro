@@ -3,35 +3,37 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Footer from '../components/Footer.astro'
 import Container from '../components/Container.astro'
 const pageTitle = 'About'
-const greeting = 'Nice to meet you,'
+const greeting = 'Hey, I’m Ciel ✿'
 const about1 =
-  "I'm Ciel, a recent graduate from the University of Virginia with a Bachelor's in Computer Science and a minor in Psychology."
+  'I’m a 2024 graduate from the University of Virginia, where I studied a blend of computer science, psychology, and design.'
 const about2 =
-  'My passion lies in the intersection of design, technology, and human behavior.'
+  'Previously I’ve interned for a nonprofit, a startup, and an agency, where I worked on feature launches, experimented with animation, and learned professional web development.'
 const about3 =
-  'I hope to spend my life answering the question of how digital products can be made to best solve human problems.'
+  'Apart from UX/UI, I love fashion, journaling, cozy games, ramen noodles, tennis, and books.'
+const about4 =
+  'Thanks for reading, and for visiting my page :) If you have any feedback, questions, or cool projects, I’d love to hear from you!'
 const facts = 'Some fun facts'
-const fact1 = '☁️ My name —  “Ciel” is the French word for “sky”'
+const fact1 = 'My name —  “Ciel” is the French word for “sky”'
 const fact2 =
-  '🤔 MBTI — INTJ, a “thoughtful tactician who loves perfecting the details of life, applying creativity and rationality to everything they do."'
+  'MBTI — INTJ, a “thoughtful tactician who loves perfecting the details of life, applying creativity and rationality to everything they do."'
 const fact3 =
-  '🍵 Drinks of choice — Strawberry matcha latte, oolong milk tea, iced vanilla latte'
+  'Drinks of choice — Strawberry matcha latte, oolong milk tea, iced vanilla latte'
 const currents = 'Currently'
-const current1 = '🎮 Playing — Stardew Valley, Valorant, Dress to Impress'
+const current1 = 'Playing — Stardew Valley, Valorant, Dress to Impress'
 const current2 =
-  '🎧 Listening to — Wave to Earth, NewJeans, Nujabes, Chappell Roan'
-const current3 = '📖 Reading — Pachinko, The Creative Act'
+  'Listening to — Wave to Earth, NewJeans, Nujabes, Chappell Roan'
+const current3 = 'Reading — Pachinko, The Creative Act'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="flex h-[calc(100vh-96px)] items-center">
     <Container>
-      <div class="mb-8 ml-8 flex gap-10">
-        <div class="flex w-1/2 flex-col justify-center gap-6">
+      <div class="flex gap-8">
+        <div class="flex w-3/5 flex-col justify-center gap-4">
           <h2>
             <span class="inline"
               >{greeting}
-              <model-viewer
+              <!--<model-viewer
                 camera-controls
                 alt="A 3D model of a bunny"
                 poster="../../images/3d/bunny.jpg"
@@ -42,35 +44,79 @@ const current3 = '📖 Reading — Pachinko, The Creative Act'
                 interaction-prompt="none"
                 auto-rotate
                 rotation-per-second="30deg">
-              </model-viewer>
+              </model-viewer> -->
             </span>
           </h2>
           <p>{about1}</p>
-          <p>{about2}</p>
+          <span
+            >Previously I’ve interned for
+            <a href="https://www.sourceamerica.org/" class="link">a nonprofit</a
+            >, <a href="https://testkube.io/" class="link">a startup</a>, and <a
+              href="https://www.viget.com/"
+              class="link">an agency</a
+            >
+            , where I worked on <a
+              href="https://testkube.io/blog/introducing-parallel-test-orchestration-for-kubernetes-ai-generated-test-insights-in-testkube-cloud"
+              class="link">feature launches</a
+            >, experimented with <a
+              href="https://lunachatbot.netlify.app/"
+              class="link">animation</a
+            >, and learned to work with <a
+              href="https://www.iaff.org/"
+              class="link">clients</a
+            >.
+          </span>
           <p>{about3}</p>
+          <span
+            >Thanks for reading, and for visiting my page :) If you have any
+            feedback, questions, or cool projects, I’d love <a
+              href="mailto:cielcpark@gmail.com"
+              class="link">to hear from you!</a
+            ></span
+          >
         </div>
-        <img
-          class="max-h-100 mx-auto rounded-xl border-2 border-black object-contain"
-          src="/images/bamboo me.jpg"
-        />
+        <div class="flex w-2/5 justify-end">
+          <img
+            class="max-h-100 border-2 border-black object-contain"
+            src="/images/bamboo me.jpg"
+          />
+        </div>
       </div>
     </Container>
   </section>
-  <section class="border-b-2 border-t-2 border-black bg-gray-200 py-8 sm:py-20">
+  <section class="border-b-2 border-t-2 border-black py-8 sm:py-20">
     <Container>
       <div class="mx-8 flex flex-col gap-6">
         <h2>{facts}</h2>
-        <p>{fact1}</p>
-        <p>{fact2}</p>
-        <p>{fact3}</p>
+        <div class="flex gap-2">
+          <img src="/icons/cloud.svg" />
+          <p>{fact1}</p>
+        </div>
+        <div class="flex gap-2">
+          <img src="/icons/mbti.svg" />
+          <p>{fact2}</p>
+        </div>
+        <div class="flex gap-2">
+          <img src="/icons/tea.svg" />
+          <p>{fact3}</p>
+        </div>
       </div>
     </Container>
     <Container>
       <div class="mx-8 mt-20 flex flex-col gap-6">
         <h2>{currents}</h2>
-        <p>{current1}</p>
-        <p>{current2}</p>
-        <p>{current3}</p>
+        <div class="flex gap-2">
+          <img src="/icons/controller.svg" />
+          <p>{current1}</p>
+        </div>
+        <div class="flex gap-2">
+          <img src="/icons/headphones.svg" />
+          <p>{current2}</p>
+        </div>
+        <div class="flex gap-2">
+          <img src="/icons/book.svg" />
+          <p>{current3}</p>
+        </div>
       </div>
     </Container>
   </section>
