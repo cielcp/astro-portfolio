@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import Footer from '../components/Footer.astro'
 import Container from '../components/Container.astro'
+import Gradient from '../components/Gradient.astro'
 const pageTitle = 'About'
 const greeting = 'Hey, I’m Ciel ✿'
 const about1 =
@@ -26,7 +26,7 @@ const current3 = 'Reading — Pachinko, The Creative Act'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="flex h-[calc(100vh-96px)] items-center">
+  <section class="relative flex h-[calc(100vh-4rem)] items-center text-white">
     <Container>
       <div class="flex gap-8">
         <div class="flex w-3/5 flex-col justify-center gap-4">
@@ -77,14 +77,14 @@ const current3 = 'Reading — Pachinko, The Creative Act'
         </div>
         <div class="flex w-2/5 justify-end">
           <img
-            class="max-h-100 border-2 border-black object-contain"
+            class="max-h-100 border-2 border-white object-contain"
             src="/images/bamboo me.jpg"
           />
         </div>
       </div>
     </Container>
   </section>
-  <section class="border-b-2 border-t-2 border-black py-8 sm:py-20">
+  <section class="py-8 sm:py-20">
     <Container>
       <div class="mx-8 flex flex-col gap-6">
         <h2>{facts}</h2>
@@ -120,5 +120,4 @@ const current3 = 'Reading — Pachinko, The Creative Act'
       </div>
     </Container>
   </section>
-  <Footer />
 </BaseLayout>

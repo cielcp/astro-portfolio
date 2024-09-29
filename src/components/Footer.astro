@@ -1,40 +1,33 @@
 ---
-import Container from './Container.astro'
+import Gradient from './Gradient.astro'
 const outro = 'Always open to feedback, questions, and making new friends ✽'
 ---
 
-<Container>
-  <div class="my-4 flex flex-col items-center gap-10" aria-label="Hero">
-    <div class="my-20 flex flex-wrap items-center">
-      <h2>
-        <span class="inline"
-          >{outro}
-          <!--<model-viewer
-            camera-controls
-            alt="A 3D model of a bow"
-            poster="../../images/3d/bow.jpg"
-            src="../../images/3d/bow.gltf"
-            camera-orbit="180deg 2m"
-            disable-zoom
-            disable-pan
-            interaction-prompt="none"
-            auto-rotate
-            rotation-per-second="30deg">
-          </model-viewer> -->
-        </span>
-      </h2>
-    </div>
-    <div class="-mt-6 flex w-full flex-col-reverse justify-between sm:flex-row">
-      <div class="emphasis flex gap-2">
-        <p>Washington DC</p>
-        <p id="clock"></p>
+<section class="footer relative border-t-2 border-black text-white">
+  <div class="absolute inset-0 z-[-1] overflow-hidden">
+    <Gradient id="footer-gradient" />
+  </div>
+  <div class="relative px-6 py-2">
+    <div class="flex flex-col items-center gap-10">
+      <div class="my-20 flex flex-wrap items-center">
+        <h2>
+          <span class="inline">{outro} </span>
+        </h2>
       </div>
-      <a href="mailto:cielcpark@gmail.com" class="hoverable emphasis link"
-        >cielcpark@gmail.com</a
-      >
+      <div
+        class="-mt-6 flex w-full flex-col-reverse justify-between sm:flex-row">
+        <div class="emphasis flex gap-2">
+          <p>Washington DC</p>
+          <p id="clock"></p>
+        </div>
+        <a href="mailto:cielcpark@gmail.com" class="hoverable emphasis link"
+          >cielcpark@gmail.com</a
+        >
+      </div>
     </div>
   </div>
-</Container>
+</section>
+
 <script>
   var clockElement = document.getElementById('clock')
 

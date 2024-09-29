@@ -1,0 +1,276 @@
+---
+interface Props {
+  id?: string
+  enableCursorTracking?: boolean
+}
+
+const { id = 'gradient-bg' } = Astro.props
+---
+
+<div class="gradient-bg relative h-full w-full overflow-hidden" id={id}>
+  <div class="noiseBg z-2 absolute inset-0 opacity-100"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"
+        ></feGaussianBlur>
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+          result="goo"></feColorMatrix>
+        <feBlend in="SourceGraphic" in2="goo"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+  <div class="gradients-container h-full w-full">
+    <div class="g1 absolute"></div>
+    <div class="g2 absolute"></div>
+    <div class="g3 absolute"></div>
+    <div class="g4 absolute opacity-70"></div>
+    <div class="g5 absolute"></div>
+    <div
+      class="interactive absolute -left-1/2 -top-1/2 h-full w-full opacity-70"
+      data-gradient-id={id}>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+    --color-bg1: #383c42;
+    --color-bg2: #000000;
+    --color1: 123, 132, 127;
+    --color2: 65, 80, 96;
+    --color3: 48, 70, 90;
+    --color4: 45, 56, 87;
+    --color5: 49, 43, 36;
+    --color-interactive: 50, 46, 71;
+    --circle-size: 90%;
+    --blending: hard-light;
+    --gradient-bg-angle: 40deg;
+    --noise-bg-size: 250px;
+    --goo-blur: 30px;
+    --gradient-opacity: 0.8;
+  }
+
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+
+  .gradient-bg {
+    contain: layout paint;
+    background: linear-gradient(
+      var(--gradient-bg-angle),
+      var(--color-bg1),
+      var(--color-bg2)
+    );
+    z-index: -500;
+    mix-blend-mode: multiply;
+  }
+  .gradient-bg .svgBlur {
+    display: none;
+  }
+  .gradient-bg .noiseBg {
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: var(--noise-bg-size) var(--noise-bg-size);
+  }
+  .gradient-bg .gradients-container {
+    filter: url(#goo) blur(var(--goo-blur));
+  }
+  .gradient-bg .g1,
+  .gradient-bg .g2,
+  .gradient-bg .g3,
+  .gradient-bg .g4,
+  .gradient-bg .g5 {
+    will-change: transform;
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color), var(--gradient-opacity)) 0,
+        rgba(var(--color), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  .gradient-bg .g1 {
+    --color: var(--color1);
+    animation: moveVertical 20s ease infinite;
+  }
+  .gradient-bg .g2 {
+    --color: var(--color2);
+    animation: moveInCircle 15s reverse infinite;
+    transform-origin: calc(50% - 400px);
+  }
+  .gradient-bg .g3 {
+    --color: var(--color3);
+    animation: moveInCircle 40s linear infinite;
+    transform-origin: calc(50% + 400px);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+  }
+  .gradient-bg .g4 {
+    --color: var(--color4);
+    animation: moveHorizontal 40s ease infinite;
+    transform-origin: calc(50% - 200px);
+  }
+  .gradient-bg .g5 {
+    --color: var(--color5);
+    animation: moveInCircle 20s ease infinite;
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+  }
+  .gradient-bg .interactive {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color-interactive), 0.8) 0,
+        rgba(var(--color-interactive), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --circle-size: 70%;
+    }
+    .gradient-bg .g5 {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gradient-bg .g1,
+    .gradient-bg .g2,
+    .gradient-bg .g3,
+    .gradient-bg .g4,
+    .gradient-bg .g5 {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const interBubble = document.querySelector('.interactive') as HTMLElement
+    let curX = 0
+    let curY = 0
+    let tgX = 0
+    let tgY = 0
+
+    const isLowEnd = navigator.hardwareConcurrency < 4 // Adjust threshold as needed
+
+    if (isLowEnd) {
+      const gradientsContainer = document.querySelector(
+        '.gradients-container',
+      ) as HTMLElement
+      if (gradientsContainer) {
+        gradientsContainer.style.filter = 'none'
+      }
+      // Optionally remove some gradient elements
+      document.querySelector('.g4')?.remove()
+      document.querySelector('.g5')?.remove()
+    }
+
+    const move = () => {
+      curX += (tgX - curX) / 20
+      curY += (tgY - curY) / 20
+      interBubble.style.transform = `translate3d(${Math.round(curX)}px, ${Math.round(curY)}px, 0)`
+
+      requestAnimationFrame(move)
+    }
+
+    const debounce = <T extends (...args: any[]) => void>(
+      func: T,
+      wait: number,
+    ) => {
+      let timeout: ReturnType<typeof setTimeout> | null = null
+
+      return function executedFunction(this: any, ...args: Parameters<T>) {
+        const later = () => {
+          timeout = null
+          func.apply(this, args)
+        }
+
+        if (timeout !== null) {
+          clearTimeout(timeout)
+        }
+
+        timeout = setTimeout(later, wait)
+      }
+    }
+
+    const handleMouseMove = debounce((event: MouseEvent) => {
+      tgX = event.clientX
+      tgY = event.clientY
+    }, 5)
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+
+    move()
+
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          const target = entry.target as HTMLElement
+          const gradients = target.querySelectorAll<HTMLElement>(
+            '.g1, .g2, .g3, .g4, .g5',
+          )
+          gradients.forEach((gradient) => {
+            if (entry.isIntersecting) {
+              gradient.style.animationPlayState = 'running'
+            } else {
+              gradient.style.animationPlayState = 'paused'
+            }
+          })
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    const gradientBg = document.querySelector('.gradient-bg')
+    if (gradientBg) {
+      observer.observe(gradientBg)
+    }
+  })
+</script>

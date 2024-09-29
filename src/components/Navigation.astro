@@ -1,46 +1,55 @@
 ---
-
+import Gradient from './Gradient.astro'
 ---
 
-<nav
-  class="sticky z-10 mx-auto border-b-2 border-[#EDEDED] px-6 py-2 text-[#EDEDED]">
-  <div class="flex h-12 items-center justify-between">
-    <a href="../" class="hoverable"><h2>✦</h2></a>
-    <!-- Hamburger Menu Button -->
-    <button id="menu-button" class="block px-2 py-1 text-[#EDEDED] sm:hidden">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M4.5 12.0005H19.5M4.5 17.7705H19.5M4.5 6.23047H19.5"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-miterlimit="10"
-          stroke-linecap="round"></path>
-      </svg>
-    </button>
-    <div class="flex hidden space-x-4 sm:flex sm:space-x-20">
-      <a href="../" class="hoverable emphasis flex items-center">
-        Work
-        <!--<img class="-mt-1 w-6" src="../../icons/down.svg" />-->
-      </a>
-      <a href="../about" class="hoverable emphasis">About</a>
-      <a href="../resume" class="hoverable emphasis">Resume</a>
-    </div>
+<section class="navigation relative text-white">
+  <div
+    class="absolute left-0 top-0 h-screen w-screen max-w-full border-b-2 border-black"
+    aria-hidden="true">
+    <Gradient id="hero-gradient" />
   </div>
-</nav>
-
-<!-- Mobile Menu -->
-<div
-  id="mobile-menu"
-  class="absolute right-4 top-20 mt-2 flex hidden w-fit flex-col items-end rounded-xl border-2 border-[#EDEDED] bg-white sm:hidden">
-  <a href="../" class="hoverable px-4 py-2"><h4>Work</h4></a>
-  <a href="../about" class="hoverable px-4 py-2"><h4>About</h4></a>
-  <a href="../resume" class="hoverable px-4 py-2"><h4>Resume</h4></a>
-</div>
+  <nav
+    class="sticky z-20 mx-auto border-b-2 border-[#EDEDED] px-6 py-2 text-[#EDEDED]">
+    <div class="flex h-12 items-center justify-between">
+      <a href="../" class="hoverable"><h2>✦</h2></a>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-button" class="block px-2 py-1 text-[#EDEDED] sm:hidden">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4.5 12.0005H19.5M4.5 17.7705H19.5M4.5 6.23047H19.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <div class="flex hidden space-x-4 sm:flex sm:space-x-20">
+        <a href="../" class="hoverable emphasis flex items-center">
+          Work
+          <!--<img class="-mt-1 w-6" src="../../icons/down.svg" />-->
+        </a>
+        <a href="../about" class="hoverable emphasis">About</a>
+        <a
+          href="https://drive.google.com/file/d/1aYkbI1Z-brlo3FeWJqVnlnxskvi6ihHu/view?usp=sharing"
+          class="hoverable emphasis">Resume</a
+        >
+      </div>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="absolute right-4 top-20 mt-2 flex hidden w-fit flex-col items-end rounded-xl border-2 border-[#EDEDED] bg-white sm:hidden">
+    <a href="../" class="hoverable px-4 py-2"><h4>Work</h4></a>
+    <a href="../about" class="hoverable px-4 py-2"><h4>About</h4></a>
+    <a href="../resume" class="hoverable px-4 py-2"><h4>Resume</h4></a>
+  </div>
+</section>
 
 <script>
   // script for displaying mobile menu

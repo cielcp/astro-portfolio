@@ -2,21 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import Works from '../components/Works.astro'
-import Footer from '../components/Footer.astro'
-import Noise from '../components/Noise.astro'
-import Background from '../components/Background.astro'
+import Gradient from '../components/Gradient.astro'
 const pageTitle = 'Home Page'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <section>
-    <Background />
     <Hero />
-    <!--<div id="img-bkg"></div> -->
   </section>
 
   <div class="">
     <Works />
   </div>
-  <Footer />
 </BaseLayout>
