@@ -12,6 +12,12 @@ image:
   alt: 'Screenshot of My Sky website'
 color: 'bg-[#E4ECE5]'
 tags: ['Web Dev', 'Visual Design', 'Coursework']
+projectInfo:
+  role: 'Design lead'
+  timeline: 'Sep - Dec 2023'
+  team: '5 UX Students'
+  skills: 'Interaction Design, User Research, Usability Testing'
+  tools: 'Figma'
 ---
 
 # Firstly

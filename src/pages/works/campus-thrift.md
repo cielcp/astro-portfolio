@@ -12,6 +12,12 @@ image:
   alt: 'The full Astro logo.'
 color: 'bg-[#F7F5F0]'
 tags: ['UX Design', 'UI Design', 'Coursework']
+projectInfo:
+  role: 'Design lead'
+  timeline: 'Sep - Dec 2023'
+  team: '5 UX Students'
+  skills: 'Interaction Design, User Research, Usability Testing'
+  tools: 'Figma'
 ---
 
 # Firstly

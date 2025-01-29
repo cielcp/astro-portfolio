@@ -3,15 +3,89 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply text-2xl font-semibold uppercase md:text-4xl;
-  }
-  /* heebo semibold 24 */
-  h2 {
-    @apply text-xl font-semibold;
-  }
+  /* GLOBAL STYLES */
+  h1,
+  h2,
   h3 {
-    @apply font-semibold uppercase md:text-lg;
+    @apply mb-4 font-semibold;
+  }
+  h1 {
+    @apply text-2xl uppercase md:text-5xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply md:text-lg;
+  }
+  .hero h3 {
+    @apply mb-0 uppercase;
+  }
+  .case-study h3 {
+    @apply mb-8 mt-20;
+  }
+  a {
+    @apply underline decoration-wavy hover:text-[#0366d6];
+  }
+  nav a {
+    @apply no-underline;
+  }
+
+  /* CASE STUDY STYLES */
+  .case-study section {
+    @apply px-44;
+  }
+  .case-study p {
+    @apply mb-8;
+  }
+  table {
+    @apply my-12 w-full;
+  }
+  th {
+    @apply text-left uppercase;
+  }
+  .case-study th {
+    @apply mb-4 normal-case;
+  }
+
+  .prototypes {
+    @apply bg-black text-white;
+  }
+  .prototypes td {
+    @apply w-1/2;
+  }
+
+  td {
+    @apply py-2;
+  }
+  .case-study td {
+    @apply pr-4;
+  }
+  img {
+    @apply mx-auto h-auto max-w-full;
+  }
+  ul,
+  ol {
+    @apply mb-4 pl-8;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+  blockquote {
+    @apply mb-4 border-l-4 border-gray-300 py-2 pl-4 italic text-gray-600;
+  }
+  pre {
+    @apply mb-4 overflow-auto rounded-md bg-gray-100 p-4 text-sm leading-relaxed;
+  }
+  code {
+    @apply rounded bg-gray-100 p-1 text-sm;
+  }
+  hr {
+    @apply mt-24 border-t-2 border-gray-300 py-8;
   }
 
   model-viewer {
@@ -28,9 +102,6 @@
   }
   .hoverable {
     @apply transform transition hover:-translate-y-1;
-  }
-  .link {
-    @apply underline decoration-wavy;
   }
 
   .gradient-bg {

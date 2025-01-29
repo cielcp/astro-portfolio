@@ -1,4 +1,5 @@
 ---
+import Container from './Container.astro'
 const intro1 =
   'is a full stack designer with a background in computer science, creating intuitive, engaging, and joyful digital experiences from ideation to implementation.'
 const focus =
@@ -6,16 +7,15 @@ const focus =
 const fuel = 'Data, creativity, perfectionism, and Korean comfort food'
 ---
 
-<section
-  class="flex h-[calc(100vh-4rem)] flex-col px-10 align-middle text-[#EDEDED]">
-  <!-- intro div -->
-  <div
-    class="my-auto w-1/2 flex-col justify-center px-6 sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
-    <h1 class="my-4 mt-12">Ciel Park</h1>
-    <p class="subtitle flex items-center justify-center">
-      <span class="inline leading-relaxed"
-        >{intro1}
-        <!--
+<Container>
+  <section
+    class="hero flex h-[calc(100vh-4rem)] flex-col justify-center gap-24 text-[#EDEDED]">
+    <div class="w-1/2 flex-col">
+      <h1>Ciel Park</h1>
+      <p class="subtitle flex items-center justify-center">
+        <span class="inline leading-relaxed"
+          >{intro1}
+          <!--
         <model-viewer
           camera-controls
           alt="A 3D model of a bow"
@@ -29,23 +29,24 @@ const fuel = 'Data, creativity, perfectionism, and Korean comfort food'
           rotation-per-second="30deg">
         </model-viewer>
          -->
-      </span>
-    </p>
-  </div>
-  <div class="my-8 flex">
-    <!-- focused on div -->
-    <div class="flex w-1/2 flex-col gap-4 p-2 px-6">
-      <h3>Focused on</h3>
-      <p>
-        {focus}
+        </span>
       </p>
     </div>
-    <!-- fueled by div -->
-    <div class="flex w-1/2 flex-col gap-4 p-2 px-6">
-      <h3>Fueled by</h3>
-      <p>
-        {fuel}
-      </p>
+    <div class="mb-16 flex justify-between">
+      <!-- focused on div -->
+      <div class="flex w-2/5 flex-col gap-4 p-2">
+        <h3>Focused on</h3>
+        <p>
+          {focus}
+        </p>
+      </div>
+      <!-- fueled by div -->
+      <div class="flex w-2/5 flex-col gap-4 p-2">
+        <h3>Fueled by</h3>
+        <p>
+          {fuel}
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</Container>
